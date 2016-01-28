@@ -1,35 +1,32 @@
 <!DOCTYPE html>
-<html ng-app="calendar">
+<html ng-app="agenda">
 <head>
     <title>My Calendar APP</title>
     <link rel="stylesheet" href="stylesheet.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
     <script type="text/javascript" src="main.js"></script>
 </head>
-<body ng-controller="agendacontroller">
+<body ng-controller="thectl">
 <div class="container">
 	<div id="container">
-  <div class="row">
-
-  	<div class="left">
-  		<h3>DATE</h3>
-  		<p>Today is <span>{{date | date:'yyyy-MM-dd'}}</span>.
-
-  	</div>
-  	<div class="right">
-    	<h3>EVENT</h3>
-    	<p>Have a wonderful day!</p>
-  	</div>
-	</div>
+  		<div class="row">
+  			<div class="left">
+  				<h3>DATE</h3>
+  		
+  		</div>
+  			<div class="right">
+    			<h3>EVENT</h3>
+    			<p>Have a wonderful day!</p>
+  			</div>
+		</div>
 </div>
-  <div class="row2">
-  	<div ng-repeat="item in agendaItems" class="left">
-  		<p><span>{{date | date:'yyyy-MM-dd'}}</span></p>
-  	</div>
-  	<div class="right">
-    	<p>...</p>
-    	
-  	</div>
+  <div class="row2" ng-repeat="item in agendaItems">
+  			<div class="left">
+  			<p ng-bind="item.date | date:'MM/dd/yyyy'"></p>
+  			</div>
+  			<div class="right">
+    			<p>...</p>
+  			</div>
 	</div>
 </div>
 </div>
